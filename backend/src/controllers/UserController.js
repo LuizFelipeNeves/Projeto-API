@@ -12,9 +12,11 @@ module.exports = {
     async user_create(req, res){
         try{ 
             const user = await User.create(req.body);
+            // avisa que foi criado um usuario todo o resto da aplicacao
+            req.io.emit('user_create', user);
             return res.json(user);
         }
-        catch(e){ return res.json(500); }
+        catch(e){ return res.json(e); }
     },
     // how update the version key?.
     async user_update(req, res){
@@ -22,6 +24,7 @@ module.exports = {
             /* Primeiro Metodo retorna os dados atualizados. */
             const user = await User.findById(req.params.id);
             user.set(req.body).save();
+            req.io.emit('user_update', user);
             return res.json(user);
 
              /* Segundo Metodo nao retorna os dados atualizados
@@ -35,6 +38,7 @@ module.exports = {
     async user_delete(req, res){
         try{
             const user = await User.deleteOne({ _id: req.params.id});
+            req.io.emit('user_delete', user);
             return res.json(200);
         }
         catch(e){ return res.json(500); }

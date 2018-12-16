@@ -17,6 +17,10 @@ routes.post('/users/:id/phone/:number', UserController.phone_create);
 routes.patch('/users/:id/phone', UserController.user_update);
 routes.delete('/users/:id/phone/:number', UserController.phone_delete);
 
+routes.get('/', function(req, res){
+    res.sendFile('index.html', { root: '.' })
+  });
+
 module.exports = routes;
 
 
