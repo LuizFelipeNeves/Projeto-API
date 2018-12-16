@@ -39,3 +39,4 @@ Tentei criar a rota: phone_update, entretanto não encontrei um método para atu
  * [ ] phone_delete (terminar o método).
  * [ ] phone_list (retorna erro caso  o array seja nulo).
  * [ ] Boas Praticas (duvidas quanto a retorno de erros e dados).
+ * [ ] Model User(Dois usuarios podem ter o mesmo numero, entretando o mesmo usuario não pode ter o mesmo numero duas vezes.) 
