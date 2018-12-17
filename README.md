@@ -1,6 +1,6 @@
 # Projeto-API
 
-Este projeto de uma aplicação back-end que fornece API's para outra aplicação de uma Lavanderia. :)
+Este projeto de uma aplicação back-end que fornece API's para outra aplicação. :)
 ------------------------------------------------------------------------------------------------
 ######
 ######
