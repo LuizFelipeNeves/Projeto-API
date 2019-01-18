@@ -13,9 +13,9 @@ routes.delete('/users/:id', UserController.user_delete);
 
 // Phone
 routes.get('/users/:id/phone', UserController.phone_list);
-routes.post('/users/:id/phone/:number', UserController.phone_create);
-routes.patch('/users/:id/phone', UserController.user_update);
-routes.delete('/users/:id/phone/:number', UserController.phone_delete);
+routes.patch('/users/:id/phone', UserController.user_update); //
+routes.post('/users/:id/phone/:number', UserController.phone_create); 
+routes.delete('/users/:id/phone/:number', UserController.phone_delete); //
 
 routes.get('/', function(req, res){
     res.sendFile('index.html', { root: '.' })

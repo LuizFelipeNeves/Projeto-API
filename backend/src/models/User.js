@@ -35,10 +35,6 @@ const UserSchema = new mongoose.Schema({
 	}],
 }, {timestamps: { createdAt: 'created_at' }});
 
-UserSchema.index({email: 1, user: 1}, {unique: true})
+UserSchema.index({email: 1, cpf: 1}, {unique: true})
 
 module.exports = mongoose.model('User', UserSchema);
-
-
-
-

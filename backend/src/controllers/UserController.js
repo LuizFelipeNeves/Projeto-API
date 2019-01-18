@@ -6,8 +6,11 @@ module.exports = {
         return res.json(users);
     },
     async user_getbyid(req, res){
-        const user = await User.findById(req.params.id);
-       return res.json(user);
+        try{
+            const user = await User.findById(req.params.id);
+            return res.json(user);
+        }
+        catch(e){ return res.json(e); }
     },
     async user_create(req, res){
         try{ 
@@ -50,6 +53,7 @@ module.exports = {
     async phone_list(req, res){
         try{
             const user = await User.findById(req.params.id);
+            req.io.emit('phone_list', users.phone);
             return res.json(users.phone);
         }
         // Array vazio retorna como erro...
